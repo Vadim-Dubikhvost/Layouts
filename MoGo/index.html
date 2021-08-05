@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<title>MoGo</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;1,300&display=swap"
+		rel="stylesheet">
+
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+</head>
+
+<body>
+
+	<!-- Sprite -->
+	<svg style="display: none;">
+		<symbol id="cart" viewBox="0 0 511.343 511.343">
+			<g>
+				<path
+					d="m490.334 106.668h-399.808l-5.943-66.207c-.972-10.827-10.046-19.123-20.916-19.123h-42.667c-11.598 0-21 9.402-21 21s9.402 21 21 21h23.468c12.825 142.882-20.321-226.415 24.153 269.089 1.714 19.394 12.193 40.439 30.245 54.739-32.547 41.564-2.809 102.839 50.134 102.839 43.942 0 74.935-43.826 59.866-85.334h114.936c-15.05 41.455 15.876 85.334 59.866 85.334 35.106 0 63.667-28.561 63.667-63.667s-28.561-63.667-63.667-63.667h-234.526c-15.952 0-29.853-9.624-35.853-23.646l335.608-19.724c9.162-.538 16.914-6.966 19.141-15.87l42.67-170.67c3.308-13.234-6.71-26.093-20.374-26.093zm-341.334 341.337c-11.946 0-21.666-9.72-21.666-21.667s9.72-21.667 21.666-21.667c11.947 0 21.667 9.72 21.667 21.667s-9.72 21.667-21.667 21.667zm234.667 0c-11.947 0-21.667-9.72-21.667-21.667s9.72-21.667 21.667-21.667 21.667 9.72 21.667 21.667-9.72 21.667-21.667 21.667zm47.366-169.726-323.397 19.005-13.34-148.617h369.142z" />
+			</g>
+		</symbol>
+		<symbol id="search" viewBox="0 0 512.005 512.005">
+			<g>
+				<path
+					d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+			S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+			c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+			 M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z" />
+			</g>
+		</symbol>
+		<symbol id="users" viewBox="0 0 611.998 611.998">
+			<g>
+				<g>
+					<path d="M316.343,106.541c12.479,13.989,21.299,31.267,26.218,51.353c4.667,19.067,5.711,40.275,3.107,63.04
+						c-0.965,8.419-2.394,17.959-4.476,28.046c16.122,15.61,37.242,25.521,64.7,25.52c76.182-0.005,103.593-76.283,110.766-138.938
+						C525.5,58.374,489.003,0.279,405.893,0.279c-65.217,0-101.728,35.787-110.15,88.501
+						C303.363,93.825,310.272,99.735,316.343,106.541z" />
+					<path d="M611.966,456.132c-0.829-24.312-3.679-48.739-7.925-72.674c-5.135-28.995-11.681-71.505-36.996-90.402
+						c-14.639-10.924-33.598-14.509-50.355-21.095c-8.157-3.205-15.467-6.389-22.324-10.013
+						c-23.148,25.385-53.333,38.664-88.482,38.666c-27.351,0-51.678-8.08-72.042-23.615c-4.688,14.499-10.963,29.102-19.352,42.443
+						c7.367,4.438,15.339,7.98,25.022,11.784c4.287,1.686,8.992,3.224,13.975,4.851c13.47,4.403,28.737,9.392,42.444,19.623
+						c32.582,24.322,40.603,69.898,46.46,103.178l0.631,3.59c3.029,17.066,5.253,33.832,6.684,50.12
+						c26.004-2.665,51.877-7.218,77.246-12.574c20.505-4.328,40.876-9.61,60.602-16.727
+						C603.315,477.606,612.613,474.965,611.966,456.132z" />
+					<path d="M430.171,464.752l-0.634-3.607c-5.477-31.126-12.98-73.754-41.411-94.977c-11.99-8.95-25.564-13.386-38.693-17.676
+						c-5.169-1.689-10.051-3.284-14.697-5.111c-6.778-2.663-12.885-5.271-18.606-8.154c-24.037,32.072-57.348,48.959-96.974,48.962
+						c-39.615,0-72.923-16.887-96.959-48.962c-5.721,2.883-11.828,5.491-18.607,8.154c-4.645,1.825-9.528,3.42-14.696,5.109
+						c-13.129,4.29-26.706,8.726-38.694,17.676c-28.439,21.226-35.938,63.862-41.413,94.993l-0.634,3.593
+						c-4.577,25.84-7.307,50.906-8.115,74.501c-0.949,27.684,16.233,33.854,31.391,39.3l1.633,0.588
+						c18.229,6.578,38.618,12.21,62.335,17.223c48.428,10.222,87.728,15.101,123.673,15.356h0.093h0.093
+						c35.95-0.255,75.248-5.135,123.67-15.356c23.72-5.011,44.109-10.643,62.332-17.221l1.63-0.586
+						c15.162-5.445,32.349-11.616,31.4-39.303C437.476,515.6,434.743,490.533,430.171,464.752z" />
+					<path d="M220.175,363.91c76.182-0.005,103.593-76.28,110.766-138.94c8.839-77.188-27.661-135.28-110.766-135.28
+						c-83.094,0-119.616,58.086-110.763,135.28C116.587,287.63,143.993,363.915,220.175,363.91z" />
+				</g>
+			</g>
+		</symbol>
+		<symbol id="facebook" viewBox="0 0 24 24">
+			<g>
+				<path
+					d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" />
+			</g>
+		</symbol>
+		<symbol id="twitter" viewBox="0 0 512 512">
+			<g>
+				<g>
+					<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+						c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+						c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+						c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+						c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+						c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+						C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+						C480.224,136.96,497.728,118.496,512,97.248z" />
+				</g>
+			</g>
+		</symbol>
+		<symbol id="pinterest" viewBox="-62 0 512 512">
+			<g>
+				<path
+					d="m60.945312 278.21875c.640626-1.597656 7.050782-26.230469 7.5-27.898438-10.007812-15.058593-21.125-64.371093-12.597656-104.398437 9.199219-58.730469 71.4375-87.601563 130.199219-87.601563v-.109374c73.570313.046874 128.640625 40.980468 128.699219 111.476562.046875 55.179688-33.195313 128.117188-89.957032 128.117188-.015624 0-.027343 0-.042968 0-20.257813 0-45.90625-9.1875-52.632813-18.210938-7.761719-10.398438-9.667969-23.230469-5.566406-36.941406 10.050781-32.082032 22.867187-70.511719 24.363281-96.136719 1.386719-24.183594-15.773437-39.917969-38.027344-39.917969-16.746093 0-38.496093 9.726563-49.335937 37.058594-8.953125 22.707031-8.761719 46.480469.585937 72.671875 3.644532 10.238281-16.15625 76.984375-22.5 98.71875-15.761718 53.992187-37.339843 122.304687-32.726562 160.347656l4.453125 36.605469 22.367187-29.3125c30.953126-40.519531 62.957032-145.332031 71.484376-170.835938 25.210937 32.648438 77.710937 33.585938 83.832031 33.585938 75.183593 0 160.4375-74.65625 158.019531-178.5625-2.121094-91.121094-68.808594-166.875-188.632812-166.875v.117188c-113.976563 0-180.5 60.835937-196.785157 137.703124-14.914062 71.273438 18.253907 125.519532 57.300781 140.398438zm0 0" />
+			</g>
+		</symbol>
+		<symbol id="instagram" viewBox="0 0 438.536 438.536">
+			<g>
+				<path d="M421.981,16.562C410.941,5.519,397.711,0,382.298,0H56.248C40.83,0,27.604,5.521,16.561,16.562
+					C5.52,27.6,0.001,40.828,0.001,56.243V382.29c0,15.413,5.518,28.644,16.56,39.683c11.043,11.04,24.272,16.563,39.687,16.563
+					h326.046c15.41,0,28.644-5.523,39.684-16.563c11.043-11.039,16.557-24.27,16.557-39.683V56.243
+					C438.534,40.825,433.021,27.604,421.981,16.562z M157.462,158.025c17.224-16.652,37.924-24.982,62.097-24.982
+					c24.36,0,45.153,8.33,62.381,24.982c17.228,16.655,25.837,36.785,25.837,60.386c0,23.598-8.609,43.729-25.837,60.379
+					c-17.228,16.659-38.014,24.988-62.381,24.988c-24.172,0-44.87-8.336-62.097-24.988c-17.228-16.652-25.841-36.781-25.841-60.379
+					C131.621,194.81,140.234,174.681,157.462,158.025z M388.865,370.589c0,4.945-1.718,9.083-5.141,12.416
+					c-3.433,3.33-7.519,4.996-12.282,4.996h-305.2c-4.948,0-9.091-1.666-12.419-4.996c-3.333-3.326-4.998-7.471-4.998-12.416V185.575
+					H89.08c-3.805,11.993-5.708,24.462-5.708,37.402c0,36.553,13.322,67.715,39.969,93.511c26.65,25.786,58.721,38.685,96.217,38.685
+					c24.744,0,47.583-5.903,68.527-17.703c20.937-11.807,37.486-27.839,49.676-48.112c12.183-20.272,18.274-42.4,18.274-66.38
+					c0-12.94-1.91-25.406-5.715-37.402h38.547v185.014H388.865z M388.865,115.626c0,5.52-1.903,10.184-5.716,13.99
+					c-3.805,3.809-8.466,5.711-13.989,5.711h-49.676c-5.517,0-10.185-1.903-13.99-5.711c-3.806-3.806-5.708-8.47-5.708-13.99V68.522
+					c0-5.33,1.902-9.945,5.708-13.848c3.806-3.901,8.474-5.854,13.99-5.854h49.676c5.523,0,10.185,1.952,13.989,5.854
+					c3.812,3.903,5.716,8.518,5.716,13.848V115.626z" />
+			</g>
+		</symbol>
+		<symbol id="views" viewBox="0 0 488.85 488.85">
+			<g>
+				<path d="M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2
+					s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025
+					c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3
+					C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7
+					c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z" />
+			</g>
+		</symbol>
+		<symbol id="comments" viewBox="0 0 512 512">
+			<g>
+				<path d="M255,16C114.39,16,0,116.928,0,241c0,52.412,20.742,103.198,58.491,143.452c7.471,30.806-1.597,63.442-24.097,85.942
+			C24.986,479.803,31.639,496,45,496c42.744,0,83.95-16.743,114.565-46.274C189.858,460.536,221.909,466,255,466
+			c140.61,0,257-100.928,257-225S395.61,16,255,16z M137,286c-24.814,0-45-20.186-45-45c0-24.814,20.186-45,45-45
+			c24.814,0,45,20.186,45,45C182,265.814,161.814,286,137,286z M257,286c-24.814,0-45-20.186-45-45c0-24.814,20.186-45,45-45
+			c24.814,0,45,20.186,45,45C302,265.814,281.814,286,257,286z M377,286c-24.814,0-45-20.186-45-45c0-24.814,20.186-45,45-45
+			c24.814,0,45,20.186,45,45C422,265.814,401.814,286,377,286z" />
+			</g>
+		</symbol>
+		<symbol id="placeholder" viewBox="0 0 512 512">
+			<g>
+				<g>
+					<path d="M256,120c-33.091,0-60,26.909-60,60c0,33.249,26.861,60,60,60c33.733,0,60-27.255,60-60C316,146.909,289.091,120,256,120z
+						" />
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M256,0C156.742,0,76,80.742,76,180c0,33.53,9.287,66.255,26.851,94.644l142.896,230.259
+						c5.925,9.569,19.895,9.423,25.635-0.205L410.63,272.212C427.211,244.424,436,212.534,436,180C436,80.742,355.258,0,256,0z
+						 M256,270.2c-50.345,0-90.2-40.979-90.2-90.2c0-49.629,40.571-90.2,90.2-90.2s90.2,40.571,90.2,90.2
+						C346.2,228.787,306.881,270.2,256,270.2z" />
+				</g>
+			</g>
+		</symbol>
+		<symbol id="googleplus" viewBox="0 0 555.562 555.562">
+			<g>
+				<g>
+					<path d="M543.312,85.472H482.32c-6.762,0-12.24-5.477-12.24-12.24V12.24c0-6.763-5.477-12.24-12.24-12.24h-18.256
+						c-6.762,0-12.238,5.478-12.238,12.24v60.992c0,6.763-5.479,12.24-12.24,12.24h-60.992c-6.764,0-12.24,5.478-12.24,12.24v18.256
+						c0,6.763,5.477,12.24,12.24,12.24h60.992c6.762,0,12.24,5.478,12.24,12.24v60.992c0,6.763,5.477,12.24,12.238,12.24h18.256
+						c6.764,0,12.24-5.477,12.24-12.24v-60.992c0-6.762,5.479-12.24,12.24-12.24h60.992c6.764,0,12.24-5.478,12.24-12.24V97.712
+						C555.552,90.949,550.076,85.472,543.312,85.472z" />
+					<path d="M35.719,521.669c10.459,7.681,22.534,14.131,36.225,19.37c13.69,5.22,27.265,8.953,40.729,11.181
+						c13.464,2.222,26.763,3.342,39.896,3.342c59.646,0,106.39-14.578,140.228-43.733c31.156-27.161,46.744-58.538,46.744-94.15
+						c0-12.681-1.836-24.541-5.508-35.558c-3.672-11.016-8.465-20.478-14.357-28.378c-5.9-7.895-12.412-15.239-19.529-22.032
+						c-7.123-6.787-14.246-12.962-21.365-18.525c-7.124-5.562-13.635-10.899-19.529-16.028c-5.9-5.116-10.686-10.459-14.357-16.028
+						c-3.672-5.557-5.508-11.236-5.508-17.025c0-8.017,2.559-15.526,7.681-22.534c5.117-7.008,11.353-13.801,18.697-20.368
+						c7.344-6.561,14.688-13.739,22.038-21.53c7.344-7.791,13.574-18.084,18.697-30.881c5.115-12.803,7.68-27.436,7.68-43.905
+						c0-19.584-4.338-38.397-13.023-56.426c-6.775-14.07-15.715-25.698-26.824-34.884c-5.208-4.309-4.418-7.185,2.338-7.185h20.593
+						c6.764,0,16.971-2.767,22.805-6.182l23.947-14.015c5.832-3.415,5.086-6.181-1.678-6.181H208.677
+						c-20.698,0-41.518,2.228-62.436,6.677c-30.943,6.897-56.978,22.656-78.122,47.247c-21.15,24.596-31.72,52.473-31.72,83.63
+						c0,32.944,11.854,60.325,35.557,82.136c23.703,21.812,52.136,32.718,85.301,32.718c3.586,0,7.484-0.159,11.708-0.478
+						c6.457-0.489,11.236,0.447,10.581,2.43c-0.355,1.071-0.777,2.258-1.261,3.562c-1.114,3.005-2.001,5.398-2.668,7.179
+						s-1.224,3.954-1.671,6.505c-0.453,2.564-0.667,5.177-0.667,7.846c0,12.001,4.749,25.263,14.26,39.792
+						c3.702,5.655,1.627,10.086-5.117,10.465c-12.748,0.729-25.361,2.057-37.852,3.997c-16.475,2.563-33.721,6.572-51.75,12.025
+						c-18.03,5.453-34.168,13.354-48.409,23.703c-14.248,10.349-24.933,22.649-32.051,36.892c-8.237,16.48-12.35,31.499-12.35,45.067
+						c0,14.92,3.342,28.434,10.019,40.569C16.692,504.086,25.254,513.988,35.719,521.669z M158.584,223.692
+						c-10.239-5.784-18.923-13.299-26.041-22.534c-7.124-9.235-13.354-19.639-18.697-31.218c-5.343-11.573-9.296-23.152-11.854-34.725
+						c-2.559-11.567-3.837-22.589-3.837-33.054c0-21.371,5.679-39.731,17.026-55.086C126.534,31.72,142.556,24.04,163.26,24.04
+						c14.688,0,27.987,4.565,39.896,13.696c11.903,9.131,21.249,20.698,28.042,34.719c6.787,14.027,12.02,28.55,15.692,43.575
+						c3.672,15.024,5.508,29.21,5.508,42.57c0,16.879-2.785,31.225-8.348,43.042c-2.876,6.114-9.29,15.184-14.572,19.395
+						c-9.492,7.564-22.332,11.346-38.513,11.346C179.619,232.376,168.817,229.488,158.584,223.692z M70.775,400.315
+						c6.01-10.459,13.69-18.807,23.036-25.043c9.345-6.23,20.251-11.353,32.717-15.355c12.46-4.009,24.48-6.787,36.059-8.348
+						c11.573-1.561,23.373-2.344,35.392-2.344c3.109,0,5.894,0.043,8.36,0.122c4.615,0.153,10.625,2.1,13.434,4.039
+						c1.426,0.985,3.121,2.161,5.085,3.52c5.453,3.788,9.125,6.347,11.016,7.675c1.885,1.334,5.343,3.898,10.349,7.681
+						c5.006,3.788,8.568,6.628,10.686,8.519c2.111,1.892,5.177,4.73,9.18,8.513c4.009,3.788,6.953,7.068,8.85,9.854
+						c1.885,2.784,4.224,6.175,7.013,10.178c2.779,4.009,4.725,7.846,5.846,11.523c1.107,3.672,2.172,7.675,3.17,12.02
+						c1.004,4.34,1.506,8.85,1.506,13.514c0,14.026-3.066,26.267-9.18,36.726c-6.126,10.459-14.413,18.642-24.873,24.548
+						c-10.465,5.894-21.646,10.232-33.556,13.017c-11.91,2.785-24.431,4.174-37.559,4.174c-14.247,0-28.378-1.671-42.399-5.006
+						c-14.021-3.342-27.436-8.396-40.227-15.189c-12.803-6.794-23.152-16.139-31.053-28.048c-7.901-11.91-11.854-25.423-11.854-40.563
+						C61.76,422.678,64.765,410.78,70.775,400.315z" />
+				</g>
+			</g>
+		</symbol>
+		<symbol id="youtube" viewBox="-21 -117 682.66672 682">
+			<g>
+				<path
+					d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0" />
+			</g>
+		</symbol>
+		<symbol id="dribbble" viewBox="0 0 438.533 438.533">
+			<g>
+				<path d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0
+					c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267
+					c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407
+					s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062
+					C438.533,179.485,428.732,142.795,409.133,109.203z M219.27,31.977c47.201,0,88.41,15.607,123.621,46.82l-3.569,4.993
+					c-1.427,2.002-4.996,5.852-10.704,11.565c-5.709,5.708-11.943,11.136-18.699,16.274c-6.762,5.14-15.94,10.992-27.555,17.559
+					c-11.611,6.567-23.982,12.328-37.117,17.276c-21.887-40.355-45.296-76.709-70.231-109.064
+					C190.055,33.784,204.805,31.977,219.27,31.977z M72.524,103.06c18.271-23.026,40.537-40.73,66.806-53.1
+					c23.601,31.405,46.82,67.381,69.662,107.921c-57.862,15.227-115.532,22.841-173.014,22.838
+					C42.072,151.98,54.253,126.091,72.524,103.06z M44.54,286.794c-8.376-21.412-12.563-43.923-12.563-67.527
+					c0-2.666,0.098-4.665,0.286-5.996c68.905,0,132.955-8.848,192.149-26.553c6.092,11.8,11.136,22.364,15.133,31.693
+					c-0.771,0.38-1.999,0.806-3.713,1.283c-1.719,0.476-2.953,0.806-3.721,0.999l-10.561,3.711
+					c-7.236,2.666-16.708,7.235-28.409,13.703c-11.704,6.478-24.123,14.182-37.257,23.13c-13.134,8.949-26.696,20.797-40.684,35.553
+					c-13.99,14.75-25.743,30.591-35.26,47.53C64.713,327.381,52.914,308.2,44.54,286.794z M219.27,406.56
+					c-44.54,0-84.32-14.277-119.343-42.825l4.283,3.142c6.661-14.66,16.462-28.746,29.408-42.257
+					c12.944-13.511,25.41-24.413,37.401-32.695c11.991-8.274,25.028-16.077,39.115-23.414c14.084-7.323,23.691-11.991,28.835-13.983
+					c5.14-1.998,9.233-3.572,12.278-4.716l0.568-0.287h0.575c18.647,48.916,31.977,96.313,39.968,142.184
+					C268.756,401.611,244.397,406.557,219.27,406.56z M376.876,320.479c-14.086,21.796-31.696,39.834-52.817,54.104
+					c-7.81-43.776-19.985-88.415-36.549-133.902c37.877-5.907,76.8-3.142,116.771,8.274
+					C400.092,274.841,390.955,298.687,376.876,320.479z M403.706,216.698c-1.903-0.378-4.285-0.81-7.139-1.283
+					c-2.854-0.473-6.331-1.047-10.424-1.713c-4.087-0.666-8.662-1.283-13.702-1.855c-5.045-0.571-10.421-1.093-16.136-1.569
+					c-5.708-0.478-11.8-0.855-18.268-1.143c-6.479-0.284-13.042-0.428-19.705-0.428c-6.656,0-13.657,0.193-20.981,0.571
+					c-7.326,0.375-14.414,1.049-21.265,1.999c-0.575-0.953-1.287-2.524-2.143-4.714c-0.855-2.187-1.479-3.855-1.848-4.997
+					c-3.621-7.994-7.81-17.036-12.573-27.121c13.134-5.333,25.652-11.469,37.555-18.418c11.892-6.949,21.402-13.131,28.544-18.555
+					c7.139-5.43,13.895-11.188,20.27-17.277c6.379-6.09,10.513-10.323,12.423-12.703c1.906-2.384,3.713-4.714,5.424-6.995l0.287-0.288
+					c27.788,33.88,41.974,72.897,42.538,117.059L403.706,216.698z" />
+			</g>
+		</symbol>
+		<symbol id="tumblr" viewBox="0 0 22.728 22.728">
+			<g>
+				<path d="M12.573,4.94V0H9.385c-0.072,0.183-0.11,0.4-0.11,0.622C9.241,0.729,9.203,0.806,9.203,0.915
+					c-0.328,1.829-1.28,3.11-2.892,3.807C5.835,4.94,5.397,4.975,4.921,4.94v3.987h2.342c0.039,5.603,0.039,8.493,0.039,8.64
+					c0,0.11,0,0.22,0,0.332c0.294,2.449,1.573,3.914,3.843,4.463c0.914,0.257,1.901,0.366,2.892,0.366
+					c1.279-0.036,2.525-0.256,3.771-0.659v-4.685c-0.731,0.22-1.395,0.402-1.977,0.583c-1.135,0.333-2.087,0.113-2.857-0.619
+					c-0.073-0.11-0.183-0.257-0.221-0.403c-0.106-0.586-0.178-1.206-0.178-1.795V8.928h5.083V4.94H12.573z" />
+			</g>
+		</symbol>
+	</svg>
+
+	<!-- Header -->
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<div class="header__mogo">MoGo</div>
+
+				<nav class="nav">
+					<a data-goto=".about" href="#" class="nav__link">About</a>
+					<a data-goto=".services" href="#" class="nav__link">Service</a>
+					<a data-goto=".works" href="#" class="nav__link">Work</a>
+					<a data-goto=".blog" href="#" class="nav__link">Blog</a>
+					<a data-goto=".mogo" href="#" class="nav__link">Contact</a>
+					<a href="#" class="nav__link">
+						<svg class="nav__icon">
+							<use xlink:href="#cart"></use>
+						</svg>
+					</a>
+					<a href="#" class="nav__link">
+						<svg class="nav__icon">
+							<use xlink:href="#search"></use>
+						</svg>
+					</a>
+				</nav>
+
+				<button class="burger" type="button">
+					<div class="burger__item">
+						<span></span>
+					</div>
+				</button>
+
+			</div> <!-- /.inner -->
+		</div> <!-- /.container -->
+	</header> <!-- /.header -->
+
+
+
+	<!-- Intro -->
+	<div class="intro">
+		<div class="container">
+
+			<div class="intro__inner">
+				<h2 class="intro__title">Creative Template</h2>
+
+				<h3 class="intro__subtitle">Welcome to Mogo
+				</h3>
+				<button data-goto=".projects" class="button intro__button">Learn more</button>
+			</div><!-- /.inner -->
+
+
+		</div>
+		<div class="slider">
+			<div class="container">
+				<div class="slider__inner">
+					<div class="slider__item active">
+						<span class="active">01</span> Intro
+					</div>
+					<div class="slider__item">
+						<span>02</span> Work
+					</div>
+					<div class="slider__item">
+						<span>03</span> About
+					</div>
+					<div class="slider__item">
+						<span>04</span> Contacts
+					</div>
+				</div>
+			</div>
+		</div><!-- /.slider -->
+	</div>
+
+
+	<!-- About -->
+	<div class="about">
+		<div class="container">
+
+			<div class="about__inner title">
+
+				<h1 class="about__title title__header">What we do</h1>
+				<h2 class="about__subtitle title__subtitle">Story about us</h2>
+				<div class="title__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco
+					laboris nisi ut aliquip ex ea commodo consequat. </div>
+
+			</div>
+
+		</div> <!-- /.container -->
+	</div> <!-- /.about -->
+
+	<div class="presentation">
+		<div class="container">
+
+			<div class="presentation__inner">
+
+				<div class="presentation__item">
+					<div class="presentation__image">
+						<img src="/img/presentations/pres1.jpg" alt="">
+					</div>
+					<svg class="presentation__icon">
+						<use xlink:href="#users"></use>
+					</svg>
+					<div class="presentation__text">Super team</div>
+				</div>
+				<div class="presentation__item">
+					<div class="presentation__image">
+						<img src="/img/presentations/pres2.jpg" alt="">
+					</div>
+					<svg class="presentation__icon">
+						<use xlink:href="#users"></use>
+					</svg>
+					<div class="presentation__text">Super team</div>
+				</div>
+				<div class="presentation__item">
+					<div class="presentation__image">
+						<img src="/img/presentations/pres3.jpg" alt="">
+					</div>
+					<svg class="presentation__icon">
+						<use xlink:href="#users"></use>
+					</svg>
+					<div class="presentation__text">Super team</div>
+				</div>
+
+			</div>
+
+		</div> <!-- /.container -->
+	</div> <!-- /.presentation -->
+
+	<!-- Stat -->
+	<div class="stat">
+		<div class="container">
+
+			<div class="stat__inner">
+				<div class="stat__item">
+					<h2 class="stat__number">42</h2>
+					<h3 class="stat__text">Web design projects</h3>
+				</div>
+				<div class="stat__item">
+					<h2 class="stat__number">123</h2>
+					<h3 class="stat__text">Happy client</h3>
+				</div>
+				<div class="stat__item">
+					<h2 class="stat__number">15</h2>
+					<h3 class="stat__text">Award winner</h3>
+				</div>
+				<div class="stat__item">
+					<h2 class="stat__number">99</h2>
+					<h3 class="stat__text">Cup of coffee</h3>
+				</div>
+				<div class="stat__item">
+					<h2 class="stat__number">24</h2>
+					<h3 class="stat__text">Members</h3>
+				</div>
+			</div>
+
+		</div> <!-- /.container -->
+	</div> <!-- /.stat -->
+
+	<!-- Services -->
+
+	<div class="services">
+		<div class="container">
+			<div class="services__inner title">
+				<div class="title__header">We work with</div>
+				<div class="title__subtitle">Amazing services</div>
+			</div>
+
+			<div class="services__box">
+				<div class="services__line"></div>
+				<div class="services__item">
+					<div class="services__icon">
+						<img src="/img/services/services.png" alt="">
+					</div>
+					<div class="services__info">
+						<h2 class="services__header">Photography</h2>
+						<div class="services__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod
+							tempor.</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__icon">
+						<img src="/img/services/services2.png" alt="">
+					</div>
+					<div class="services__info">
+						<h2 class="services__header">Web design</h2>
+						<div class="services__text">Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor.</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__icon">
+						<img src="/img/services/services3.png" alt="">
+					</div>
+					<div class="services__info">
+						<h2 class="services__header">Creativity</h2>
+						<div class="services__text">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__icon">
+						<img src="/img/services/services4.png" alt="">
+					</div>
+					<div class="services__info">
+						<h2 class="services__header">Seo</h2>
+						<div class="services__text">Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__icon">
+						<img src="/img/services/services5.png" alt="">
+					</div>
+					<div class="services__info">
+						<h2 class="services__header">Css/html</h2>
+						<div class="services__text">Lorem dolor sit amet, consectetur adipiscing elit, sed do tempor.
+						</div>
+					</div>
+				</div>
+				<div class="services__item">
+					<div class="services__icon">
+						<img src="/img/services/services6.png" alt="">
+					</div>
+					<div class="services__info">
+						<h2 class="services__header">Digital</h2>
+						<div class="services__text">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.services -->
+
+	<!-- Devices -->
+	<div class="devices">
+		<div class="container">
+			<div class="devices__inner title">
+				<div class="title__header">For all devices</div>
+				<div class="title__subtitle">Unique design</div>
+			</div>
+
+			<div class="devices__images">
+				<img class="devices__item" src="/img/devices/devices.png" alt="">
+				<img class="devices__item devices__item--iphone" src="/img/devices/devices2.png" alt="">
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.devices -->
+
+	<!-- Works -->
+	<div class="works">
+		<div class="container">
+			<div class="works__inner title">
+				<div class="title__header">Service</div>
+				<div class="title__subtitle">What we do</div>
+				<div class="title__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+			</div>
+
+			<div class="works__box">
+				<div class="works__image">
+					<img src="/img/works/works.jpg" alt="">
+				</div>
+
+
+				<div class="works__slider one">
+					<div class="works__item">
+						<div data-spoiler=".works__about-1" data-arrow=".works__arrow-1" class="works__title">
+							<div class="works__icon">
+								<img src="/img/works/works__icon.png" alt="">
+							</div>
+							<div class="works__subtitle">Photography</div>
+							<span class="works__arrow works__arrow-1"></span>
+						</div>
+						<div class="works__about works__about-1">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit, sed do
+							eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+							in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+							occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+							laborum.
+						</div>
+					</div>
+					<div class="works__item">
+						<div data-spoiler=".works__about-2" data-arrow=".works__arrow-2" class="works__title">
+							<div class="works__icon">
+								<img src="/img/works/works__icon2.png" alt="">
+							</div>
+							<div class="works__subtitle">Creativity</div>
+							<span class="works__arrow works__arrow-2"></span>
+						</div>
+						<div class="works__about works__about-2">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit, sed do
+							eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+							in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+							occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+							laborum.
+						</div>
+					</div>
+					<div class="works__item">
+						<div data-spoiler=".works__about-3" data-arrow=".works__arrow-3" class="works__title">
+							<div class="works__icon">
+								<img src="/img/works/works__icon3.png" alt="">
+							</div>
+							<div class="works__subtitle">Web design</div>
+							<span class="works__arrow works__arrow-3"></span>
+						</div>
+						<div class="works__about works__about-3">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit, sed do
+							eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+							in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+							occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+							laborum.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.works -->
+
+	<!-- Quote -->
+	<div class="quote">
+		<div class="container">
+			<div class="quote__inner">
+				<div class="quote__icon">
+					<img class="quote__image" src="/img/quote/quote.png" alt="">
+				</div>
+				<div class="quote__textbox">
+					<div class="quote__text">
+						“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+					</div>
+					<div class="quote__speaker">
+						Jon Doe
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.quote -->
+
+	<!-- Team -->
+	<div class="team">
+		<div class="container">
+			<div class="team__inner title">
+				<div class="title__header">Who we are</div>
+				<div class="title__subtitle">Meet our team</div>
+				<div class="title__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+			</div> <!-- /.inner -->
+
+			<div class="team__members">
+				<div class="team__item">
+					<div class="team__image">
+						<div class="team__photo">
+							<img class="team__img" src="/img/team/team.jpg" alt="">
+							<div class="team__social">
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#twitter"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#pinterest"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="team__title">Matthew Dix</div>
+					<div class="team__subtitle">Graphic Design</div>
+				</div>
+
+				<div class="team__item">
+					<div class="team__image">
+						<div class="team__photo">
+							<img class="team__img" src="/img/team/team2.jpg" alt="">
+							<div class="team__social">
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#twitter"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#pinterest"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="team__title">Christopher Campbell</div>
+					<div class="team__subtitle">Branding/UX design</div>
+				</div>
+
+				<div class="team__item">
+					<div class="team__image">
+						<div class="team__photo">
+							<img class="team__img" src="/img/team/team3.jpg" alt="">
+							<div class="team__social">
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#twitter"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#pinterest"></use>
+									</svg>
+								</a>
+								<a class="team__link" href="#">
+									<svg class="team__icon">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="team__title">Michael Fertig </div>
+					<div class="team__subtitle">Developer</div>
+				</div>
+			</div> <!-- /.members -->
+		</div> <!-- /.container -->
+	</div> <!-- /.team -->
+
+	<!-- Logos -->
+	<div class="logos">
+		<div class="container">
+			<div class="logos__image">
+				<img src="/img/logos/logos.png" alt="">
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.logos -->
+
+	<!-- Projects -->
+	<div class="projects">
+		<div class="container">
+			<div class="projects__inner title">
+				<div class="title__header">What we do</div>
+				<div class="title__subtitle">Some of our work</div>
+				<div class="title__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+			</div> <!-- /.inner -->
+		</div> <!-- /.container -->
+
+		<div class="projects__image">
+			<div class="projects__four">
+				<div class="projects__box">
+					<div class="projects__photo">
+						<img class="projects__img" src="/img/projects/proj.jpg" alt="">
+						<div class="projects__about">
+							<img class="projects__icon" src="/img/projects/picture.png" alt="">
+							<div class="projects__title">Creatively designed</div>
+							<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+						</div>
+					</div> <!-- /.photo -->
+				</div>
+
+				<div class="projects__box">
+					<div class="projects__photo">
+						<img class="projects__img" src="/img/projects/proj2.jpg" alt="">
+						<div class="projects__about">
+							<img class="projects__icon" src="/img/projects/picture.png" alt="">
+							<div class="projects__title">Creatively designed</div>
+							<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+						</div>
+					</div> <!-- /.photo -->
+				</div>
+
+				<div class="projects__box">
+					<div class="projects__photo">
+						<img class="projects__img" src="/img/projects/proj3.jpg" alt="">
+						<div class="projects__about">
+							<img class="projects__icon" src="/img/projects/picture.png" alt="">
+							<div class="projects__title">Creatively designed</div>
+							<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+						</div>
+					</div> <!-- /.photo -->
+				</div>
+
+				<div class="projects__box">
+					<div class="projects__photo">
+						<img class="projects__img" src="/img/projects/proj4.jpg" alt="">
+						<div class="projects__about">
+							<img class="projects__icon" src="/img/projects/picture.png" alt="">
+							<div class="projects__title">Creatively designed</div>
+							<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+						</div>
+					</div> <!-- /.photo -->
+				</div>
+			</div>
+
+			<div class="projects__one">
+				<div class="projects__photo">
+					<img class="projects__img" src="/img/projects/proj5.jpg" alt="">
+					<div class="projects__about">
+						<img class="projects__icon" src="/img/projects/picture.png" alt="">
+						<div class="projects__title">Creatively designed</div>
+						<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+					</div>
+				</div> <!-- /.photo -->
+			</div>
+
+			<div class="projects__two">
+				<div class="projects__photo">
+					<img class="projects__img" src="/img/projects/proj6.jpg" alt="">
+					<div class="projects__about">
+						<img class="projects__icon" src="/img/projects/picture.png" alt="">
+						<div class="projects__title">Creatively designed</div>
+						<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+					</div>
+				</div> <!-- /.photo -->
+
+				<div class="projects__photo">
+					<img class="projects__img" src="/img/projects/proj7.jpg" alt="">
+					<div class="projects__about">
+						<img class="projects__icon" src="/img/projects/picture.png" alt="">
+						<div class="projects__title">Creatively designed</div>
+						<div class="projects__subtitle">Lorem ipsum dolor sit</div>
+					</div>
+				</div> <!-- /.photo -->
+			</div>
+		</div> <!-- /.image -->
+	</div> <!-- /.projects -->
+
+	<!-- Quote -->
+	<div class="quote qoute--joshua">
+		<div class="container">
+			<div class="quote__inner">
+				<div class="quote__icon">
+					<img class="quote__image" src="/img/quote/quote2.jpg" alt="">
+				</div>
+				<div class="quote__textbox">
+					<div class="quote__text">
+						“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+					</div>
+					<div class="quote__speaker">
+						Joshua Earle
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.quote -->
+
+	<!-- Clients -->
+	<div class="clients">
+		<div class="container">
+			<div class="title clients__title">
+				<div class="title__header">Happy Clients</div>
+				<div class="title__subtitle">What people say</div>
+			</div>
+
+			<div class="clients__inner">
+				<div class="clients__item">
+					<img src="/img/clients/clients.jpg" alt="" class="clients__img">
+					<div class="clients__subtitle">
+						<div class="clients__name">Matthew Dix</div>
+						<div class="clients__post">
+							Graphic Design
+						</div>
+
+						<div class="clients__text">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim.
+						</div>
+					</div>
+				</div>
+
+				<div class="clients__item">
+					<img src="/img/clients/clients2.jpg" alt="" class="clients__img">
+					<div class="clients__subtitle">
+						<div class="clients__name">Nick Karvounis</div>
+						<div class="clients__post">
+							Graphic Design
+						</div>
+
+						<div class="clients__text">
+							Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+							magna aliqua. Ut enim ad minim veniam
+						</div>
+					</div>
+				</div>
+
+				<div class="clients__item">
+					<img src="/img/clients/clients3.jpg" alt="" class="clients__img">
+					<div class="clients__subtitle">
+						<div class="clients__name">Jaelynn Castillo </div>
+						<div class="clients__post">
+							Graphic Design
+						</div>
+
+						<div class="clients__text">
+							Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam
+						</div>
+					</div>
+				</div>
+
+				<div class="clients__item">
+					<img src="/img/clients/clients4.jpg" alt="" class="clients__img">
+					<div class="clients__subtitle">
+						<div class="clients__name">Mike Petrucci</div>
+						<div class="clients__post">
+							Graphic Design
+						</div>
+
+						<div class="clients__text">
+							Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.clients -->
+
+	<!-- Blog -->
+	<div class="blog">
+		<div class="container">
+			<div class="title blog__title">
+				<div class="title__header">Our stories</div>
+				<div class="title__subtitle">Latest blog</div>
+			</div>
+
+			<div class="blog__inner">
+				<div class="blog__item">
+					<div class="blog__image">
+						<img src="/img/blog/blog.jpg" alt="" class="blog__img">
+						<div class="blog__date">
+							<div class="blog__number">15</div>
+							<div class="blog__month">Jan</div>
+						</div>
+					</div> <!-- /.image -->
+					<div class="blog__subtitle">Lorem ipsum dolor sit amet</div>
+					<div class="blog__text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+						dolore magna aliqua.</div>
+					<div class="blog__stats">
+						<svg class="blog__icon">
+							<use xlink:href="#views"></use>
+						</svg>
+						<span>542</span>
+						<svg class="blog__icon">
+							<use xlink:href="#comments"></use>
+						</svg>
+						<span>17</span>
+					</div>
+				</div>
+
+				<div class="blog__item">
+					<div class="blog__image">
+						<img src="/img/blog/blog2.jpg" alt="" class="blog__img">
+						<div class="blog__date">
+							<div class="blog__number">14</div>
+							<div class="blog__month">Jan</div>
+						</div>
+					</div> <!-- /.image -->
+					<div class="blog__subtitle">Sed do eiusmod tempor</div>
+					<div class="blog__text">Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+						aliqua.</div>
+					<div class="blog__stats">
+						<svg class="blog__icon">
+							<use xlink:href="#views"></use>
+						</svg>
+						<span>992</span>
+						<svg class="blog__icon">
+							<use xlink:href="#comments"></use>
+						</svg>
+						<span>42</span>
+					</div>
+				</div>
+
+				<div class="blog__item">
+					<div class="blog__image">
+						<img src="/img/blog/blog3.jpg" alt="" class="blog__img">
+						<div class="blog__date">
+							<div class="blog__number">12</div>
+							<div class="blog__month">Jan</div>
+						</div>
+					</div> <!-- /.image -->
+					<div class="blog__subtitle">Incididunt ut labore et dolore</div>
+					<div class="blog__text">Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</div>
+					<div class="blog__stats">
+						<svg class="blog__icon">
+							<use xlink:href="#views"></use>
+						</svg>
+						<span>1560</span>
+						<svg class="blog__icon">
+							<use xlink:href="#comments"></use>
+						</svg>
+						<span>98</span>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.blog -->
+
+	<!-- Map -->
+	<div class="map">
+		<div class="container">
+			<div class="map__inner">
+				<div class="map__img">
+					<svg class="map__icon">
+						<use xlink:href="#placeholder"></use>
+					</svg>
+				</div>
+				<div class="map__header">Open map</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- MoGo -->
+	<div class="mogo">
+		<div class="container">
+			<div class="mogo__inner">
+
+				<div class="mogo__itm">
+					<div class="mogo__media">
+						<div class="mogo__title">MoGo</div>
+						<div class="mogo__text">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat.
+						</div>
+						<div class="mogo__followers"> <span>15k</span> followers</div>
+						<div class="mogo__social">
+							<div class="mogo__follow">
+								Follow us:
+							</div>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#pinterest"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#googleplus"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#youtube"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#dribbble"></use>
+								</svg>
+							</a>
+							<a class="mogo__link" href="#">
+								<svg class="mogo__icon">
+									<use xlink:href="#tumblr"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="mogo__email">
+							<form>
+								<input class="mogo__input" type="email" placeholder="Your Email...">
+								<input class="mogo__submit" type="submit" value="SUBSCRIBE">
+							</form>
+						</div>
+					</div> <!-- /.media -->
+				</div>
+
+				<div class="mogo__itm">
+					<div class="mogo__blogs">
+						<div class="mogo__header">Blogs</div>
+						<div class="mogo__item">
+							<div class="mogo__image">
+								<img src="/img/mogo/blogs.jpg" alt="">
+							</div>
+							<div class="mogo__bloginfo">
+								<div class="mogo__header mogo--mod">Lorem ipsum dolor sit amet,
+									consectetur adipiscing</div>
+								<div class="mogo__date">Jan 9, 2016</div>
+							</div>
+						</div>
+
+						<div class="mogo__item">
+							<div class="mogo__image">
+								<img src="/img/mogo/blogs2.jpg" alt="">
+							</div>
+							<div class="mogo__bloginfo">
+								<div class="mogo__header mogo--mod">Consectetur adipiscing elit,
+									sed do eiusmod tempor</div>
+								<div class="mogo__date">Jan 9, 2016</div>
+							</div>
+						</div>
+
+						<div class="mogo__item">
+							<div class="mogo__image">
+								<img src="/img/mogo/blogs3.jpg" alt="">
+							</div>
+							<div class="mogo__bloginfo">
+								<div class="mogo__header mogo--mod">Sed do eiusmod tempor
+									incididunt ut labore</div>
+								<div class="mogo__date">Jan 9, 2016</div>
+							</div>
+						</div>
+					</div> <!-- /.blogs -->
+				</div>
+
+				<div class="mogo__itm">
+					<div class="mogo__instagram">
+						<div class="mogo__header">Instagram</div>
+						<div class="mogo__box">
+							<img src="/img/mogo/instagram/instagram.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram2.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram3.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram4.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram5.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram6.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram7.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram8.jpg" alt="" class="mogo__img">
+							<img src="/img/mogo/instagram/instagram9.jpg" alt="" class="mogo__img">
+						</div>
+						<a href="#" class="mogo__more">View more photos</a>
+					</div> <!-- /.instagram -->
+				</div>
+
+			</div> <!-- /.inner -->
+		</div><!-- /.container -->
+	</div> <!-- /.mogo -->
+
+	<!-- Footer -->
+	<footer class="footer">
+		© 2016 MoGo free PSD template by <span>Laaqiq</span>
+	</footer>
+
+	<script src="/js/script.js"></script>
+
+</body>
+
+</html>
